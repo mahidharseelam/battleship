@@ -83,19 +83,20 @@
                         var randomSelectY = Math.floor(Math.random() * 10);
                         var i = randomSelectX
                         var j = randomSelectY
-                        if (gridArrayBattleShip[i][j] == "selected") {
-                            computerChance()
-                        } else {
+                        if (gridArrayBattleShip[i][j] != "selected") {
                             if (gridArrayBattleShip[i][j] == null) {
-                                gridArrayBattleShip[i][j] == "selected"
+                                gridArrayBattleShip[i][j] = "selected"
                                 document.getElementById("computer" + String(i) + String(j)).innerHTML = "X"
                                 console.log("computer", i, j)
                             } else {
-                                gridArrayBattleShip[i][j] == "selected"
+                                gridArrayBattleShip[i][j] = "selected"
                                 document.getElementById("computer" + String(i) + String(j)).innerHTML = "X"
                                 console.log("computer", i, j)
                                 console.log("COMPUTER GOT " + battleship.computerPoints() + " POINTS")
                             }
+                        } else {
+                            computerChance()
+                            console.log("attemptagain")
                         }
                     }
 
