@@ -95,7 +95,7 @@
                                             document.getElementById("computer" + String(i) + String(j)).innerHTML = "X"
                                             console.log(i, j)
                                             gridArrayBattleShip[i][j] = "selected"
-                                            console.log(battleship.computerPoints())
+                                            console.log("COMPUTER GOT "+battleship.computerPoints()+" POINTS")
                                         }
                                     } else {
                                         computerChance()
@@ -120,7 +120,8 @@
                             document.getElementById("player" + String(i) + String(j)).style.background =
                                 gridArrayBattleShip1[i][j]
                             gridArrayBattleShip1[i][j] = "selected"
-                            console.log(battleship1.playerPoints())
+                            console.log("PLAYER GOT "+battleship1.playerPoints()+" POINTS")
+                            
                         }
                         computerChance()
                     }

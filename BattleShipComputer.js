@@ -197,21 +197,14 @@ class BattleshipComputer {
         }
     }
 
-    playerChance(i, j) {
-        if (gridArrayBattleShip1[i][j] == null) {
-            console.log("no ship")
-            document.getElementById(String(i) + String(j)).style.visibility = "hidden"
-        } else {
-            console.log("there is a ship")
-            //points = points +1
-            document.getElementById(String(i) + String(j)).style.visibility = "hidden"
-            document.getElementById("player" + String(i) + String(j)).style.background = gridArrayBattleShip1[i][j]
-            
-        }        
-    }
+  
 
     playerPoints(){
         PLAYER_POINTS+=1
+        if(PLAYER_POINTS==30)
+        {
+         alert("PLAYER WIN");
+        }
         return PLAYER_POINTS
     }
 

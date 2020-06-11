@@ -197,6 +197,10 @@ class BattleshipPlayer {
 
     computerPoints(){
         COMPUTER_POINTS+=1
+    if(COMPUTER_POINTS==30)
+    {
+        alert("COMPUTER WIN");
+    }
         return COMPUTER_POINTS
     }
 
