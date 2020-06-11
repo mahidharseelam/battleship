@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="BattleShip.js"></script>
+    <script type="text/javascript" src="BattleShipComputer.js"></script>
+</head>
+
+<body>
+    <h1>BATTLESHIP</h1>
+    <div class="game">
+        <div class="computer">
+
+            <h2><b>COMPUTER</b></h2>
+            <table>
+                <script type="text/javascript">
+                    //import {addVerticalFourShip} from './BattleShip.js';
+                    const battleship = new BattleshipPlayer("red", "blue", "darkgreen", "brown", "purple");
+                    battleship.arrayInit();
+                    battleship.addSingleShip();
+                    battleship.addHorizontalDoubleShip()
+                    battleship.addSingleShip()
+                    battleship.addVerticalDoubleShip()
+                    battleship.addHorizontalTripleShip()
+                    battleship.addVerticalTripleShip()
+                    battleship.addHorizontalFourShip()
+                    battleship.addVerticalFourShip()
+                    battleship.addHorizontalFiveShip()
+                    battleship.addVerticalFiveShip()
+                    for (var i = 0; i < 10; i++) {
+                        document.write("<tr>")
+                        for (var j = 0; j < 10; j++) {
+                            if (gridArrayBattleShip[i][j] == null) {
+                                document.write("<td id='computer" + String(i) + String(j) +
+                                    "' style='background:white;opacity:0.3;text-align:center'></td>")
+                            } else {
+                                document.write("<td id='computer" + String(i) + String(j) + "' style='background:" +
+                                    gridArrayBattleShip[i][j] + ";text-align:center'></td>")
+                            }
+                        }
+                        document.write("</tr>")
+                    }
+                </script>
+            </table>
+        </div>
+        <div class="player">
+            <h2><b>PLAYER</b></h2>
+            <table>
+                <script>
+                    const battleship1 = new BattleshipComputer("red", "blue", "darkgreen", "brown", "purple");
+                    battleship1.arrayInit()
+                    battleship1.addSingleShip()
+                    battleship1.addHorizontalDoubleShip()
+                    battleship1.addSingleShip()
+                    battleship1.addVerticalDoubleShip()
+                    battleship1.addHorizontalTripleShip()
+                    battleship1.addVerticalTripleShip()
+                    battleship1.addHorizontalFourShip()
+                    battleship1.addVerticalFourShip()
+                    battleship1.addHorizontalFiveShip()
+                    battleship1.addVerticalFiveShip()
+
+
+                    for (var i = 0; i < 10; i++) {
+                        document.write("<tr>")
+                        for (var j = 0; j < 10; j++) {
+                            document.write("<td id='player" + String(i) + String(j) +
+                                "'><input type='submit' onclick='playerChance(" + i + "," + j +
+                                ")'  value='' id='" + String(i) + String(j) + "' ></td>");
+                            //  document.write("<td><input type='submit' onclick='battleship.computerChance()'  value='' id=["+ String(i)+String(j)+ "] ></td>")
+                            //      console.log(String(i)+String(j))
+                        }
+                        document.write("</tr>")
+                    }
+
+
+                    function computerChance() {
+                        var randomSelectX = Math.floor(Math.random() * 10);
+                        var randomSelectY = Math.floor(Math.random() * 10);
+
+                        for (var i = 0; i < 10; i++) {
+                            for (var j = 0; j < 10; j++) {
+                                if (randomSelectX == i && randomSelectY == j) {
+                                    if (gridArrayBattleShip[i][j] != "selected") {
+                                        if (gridArrayBattleShip[i][j] == null) {
+                                            gridArrayBattleShip[i][j] == "selected"
+                                            document.getElementById("computer" + String(i) + String(j)).innerHTML = "X"
+                                            console.log(i, j)
+                                        } else {
+                                            gridArrayBattleShip[i][j] == "selected"
+                                            document.getElementById("computer" + String(i) + String(j)).innerHTML = "X"
+                                            console.log(i, j)
+                                        }
+                                    } else {
+                                        this.computerChance()
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+
+
+                    function playerChance(i, j) {
+                        if (gridArrayBattleShip1[i][j] == null) {
+                            console.log("no ship")
+                            document.getElementById(String(i) + String(j)).style.visibility = "hidden"
+
+
+                        } else {
+                            console.log("there is a ship")
+                            //points = points +1
+                            document.getElementById(String(i) + String(j)).style.visibility = "hidden"
+                            document.getElementById("player" + String(i) + String(j)).style.background =
+                                gridArrayBattleShip1[i][j]
+                        }
+                        computerChance()
+                    }
+
+                    function playerPoints(){
+
+                    }
+
+                    function computerPoints(){
+                        
+                    }
+
+                </script>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
