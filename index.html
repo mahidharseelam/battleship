@@ -81,29 +81,24 @@
                     function computerChance() {
                         var randomSelectX = Math.floor(Math.random() * 10);
                         var randomSelectY = Math.floor(Math.random() * 10);
-
-                        for (var i = 0; i < 10; i++) {
-                            for (var j = 0; j < 10; j++) {
-                                if (randomSelectX == i && randomSelectY == j) {
-                                    if (gridArrayBattleShip[i][j] != "selected") {
-                                        if (gridArrayBattleShip[i][j] == null) {
-                                            gridArrayBattleShip[i][j] == "selected"
-                                            document.getElementById("computer" + String(i) + String(j)).innerHTML = "X"
-                                            console.log("computer",i, j)
-                                        } else {
-                                            gridArrayBattleShip[i][j] == "selected"
-                                            document.getElementById("computer" + String(i) + String(j)).innerHTML = "X"
-                                            console.log("computer",i, j)
-                                            console.log("COMPUTER GOT "+battleship.computerPoints()+" POINTS")
-                                        }
-                                    } else {
-                                        computerChance()
-                                    }
-
-                                }
+                        var i = randomSelectX
+                        var j = randomSelectY
+                        if (gridArrayBattleShip[i][j] == "selected") {
+                            computerChance()
+                        } else {
+                            if (gridArrayBattleShip[i][j] == null) {
+                                gridArrayBattleShip[i][j] == "selected"
+                                document.getElementById("computer" + String(i) + String(j)).innerHTML = "X"
+                                console.log("computer", i, j)
+                            } else {
+                                gridArrayBattleShip[i][j] == "selected"
+                                document.getElementById("computer" + String(i) + String(j)).innerHTML = "X"
+                                console.log("computer", i, j)
+                                console.log("COMPUTER GOT " + battleship.computerPoints() + " POINTS")
                             }
                         }
                     }
+
 
 
                     function playerChance(i, j) {
@@ -119,7 +114,7 @@
                             document.getElementById("player" + String(i) + String(j)).style.background =
                                 gridArrayBattleShip1[i][j]
                             gridArrayBattleShip1[i][j] = "selected"
-                            console.log("PLAYER GOT "+battleship1.playerPoints()+" POINTS")
+                            console.log("PLAYER GOT " + battleship1.playerPoints() + " POINTS")
 
                         }
                         computerChance()
