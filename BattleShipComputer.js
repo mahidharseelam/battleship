@@ -204,6 +204,7 @@ class BattleshipComputer {
         if(PLAYER_POINTS==30)
         {
          alert("PLAYER WIN");
+            location.reload();
         }
         return PLAYER_POINTS
     }
