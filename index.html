@@ -19,7 +19,7 @@
             <table>
                 <script type="text/javascript">
                     //import {addVerticalFourShip} from './BattleShip.js';
-                    const battleship = new BattleshipPlayer("red", "blue", "darkgreen", "brown", "purple");
+                    const battleship = new BattleshipPlayer("red", "blue", "darkgreen", "brown", "black");
                     battleship.arrayInit();
                     battleship.addSingleShip();
                     battleship.addHorizontalDoubleShip()
@@ -31,8 +31,6 @@
                     battleship.addVerticalFourShip()
                     battleship.addHorizontalFiveShip()
                     battleship.addVerticalFiveShip()
-
-                    
                     for (var i = 0; i < 10; i++) {
                         document.write("<tr>")
                         for (var j = 0; j < 10; j++) {
@@ -53,7 +51,7 @@
             <h2><b>PLAYER</b></h2>
             <table>
                 <script>
-                    const battleship1 = new BattleshipComputer("red", "blue", "darkgreen", "brown", "purple");
+                    const battleship1 = new BattleshipComputer("red", "blue", "darkgreen", "brown", "black");
                     battleship1.arrayInit()
                     battleship1.addSingleShip()
                     battleship1.addHorizontalDoubleShip()
