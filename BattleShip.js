@@ -195,6 +195,11 @@ class BattleshipPlayer {
          }
     }
 
+    computerPoints(){
+        COMPUTER_POINTS+=1
+        return COMPUTER_POINTS
+    }
+
     
 }
 // const battleship = new Battleship("red", "blue", "darkgreen", "brown", "purple");

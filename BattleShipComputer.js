@@ -6,7 +6,7 @@ var DOUBLE_SHIP_VALUE
 var TRIPLE_SHIP_VALUE
 var FOUR_SHIP_VALUE
 var FIVE_SHIP_VALUE
-var PLAYER_POINTS
+var PLAYER_POINTS = 0
 class BattleshipComputer {
 
     constructor(SINGLE_SHIP_VALUE, DOUBLE_SHIP_VALUE, TRIPLE_SHIP_VALUE, FOUR_SHIP_VALUE, FIVE_SHIP_VALUE){
@@ -201,15 +201,21 @@ class BattleshipComputer {
         if (gridArrayBattleShip1[i][j] == null) {
             console.log("no ship")
             document.getElementById(String(i) + String(j)).style.visibility = "hidden"
-
-
         } else {
             console.log("there is a ship")
             //points = points +1
             document.getElementById(String(i) + String(j)).style.visibility = "hidden"
             document.getElementById("player" + String(i) + String(j)).style.background = gridArrayBattleShip1[i][j]
+            
         }        
     }
+
+    playerPoints(){
+        PLAYER_POINTS+=1
+        return PLAYER_POINTS
+    }
+
+    
 
 
 }

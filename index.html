@@ -94,9 +94,11 @@
                                             gridArrayBattleShip[i][j] == "selected"
                                             document.getElementById("computer" + String(i) + String(j)).innerHTML = "X"
                                             console.log(i, j)
+                                            gridArrayBattleShip[i][j] = "selected"
+                                            console.log(battleship.computerPoints())
                                         }
                                     } else {
-                                        this.computerChance()
+                                        computerChance()
                                     }
 
                                 }
@@ -117,18 +119,11 @@
                             document.getElementById(String(i) + String(j)).style.visibility = "hidden"
                             document.getElementById("player" + String(i) + String(j)).style.background =
                                 gridArrayBattleShip1[i][j]
+                            gridArrayBattleShip1[i][j] = "selected"
+                            console.log(battleship1.playerPoints())
                         }
                         computerChance()
                     }
-
-                    function playerPoints(){
-
-                    }
-
-                    function computerPoints(){
-                        
-                    }
-
                 </script>
             </table>
         </div>
