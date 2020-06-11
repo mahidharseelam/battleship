@@ -89,11 +89,11 @@
                                         if (gridArrayBattleShip[i][j] == null) {
                                             gridArrayBattleShip[i][j] == "selected"
                                             document.getElementById("computer" + String(i) + String(j)).innerHTML = "X"
-                                            console.log(i, j)
+                                            console.log("computer",i, j)
                                         } else {
                                             gridArrayBattleShip[i][j] == "selected"
                                             document.getElementById("computer" + String(i) + String(j)).innerHTML = "X"
-                                            console.log(i, j)
+                                            console.log("computer",i, j)
                                             gridArrayBattleShip[i][j] = "selected"
                                             console.log("COMPUTER GOT "+battleship.computerPoints()+" POINTS")
                                         }
@@ -121,7 +121,7 @@
                                 gridArrayBattleShip1[i][j]
                             gridArrayBattleShip1[i][j] = "selected"
                             console.log("PLAYER GOT "+battleship1.playerPoints()+" POINTS")
-                            
+
                         }
                         computerChance()
                     }
