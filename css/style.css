@@ -24,6 +24,8 @@ body{
 h1{
 	margin-left: 46%;
 	margin-top: 2%;
+	text-shadow: blue 2px 2px 2px;
+	color: chartreuse;
 }
 
 h2 {
