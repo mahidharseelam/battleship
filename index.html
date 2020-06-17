@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/scoreBoard.css">
     <script type="text/javascript" src="BattleShip.js"></script>
     <script type="text/javascript" src="BattleShipComputer.js"></script>
+    <style>
+        
+    </style>
 </head>
 
 <body>
     <h1>BATTLESHIP</h1>
-    <div class="game">
-        <div class="computer">
-
+        
             <h2><b>COMPUTER</b></h2>
             <table>
                 <script type="text/javascript">
@@ -91,8 +93,9 @@
                             } else {
                                 gridArrayBattleShip[i][j] = "selected"
                                 document.getElementById("computer" + String(i) + String(j)).innerHTML = "X"
-                                console.log("computer", i, j)
-                                console.log("COMPUTER GOT " + battleship.computerPoints() + " POINTS")
+                                console.log("computer", i, j);
+                                //console.log("COMPUTER GOT " + battleship.computerPoints() + " POINTS");
+                                document.getElementById("computer_score").innerHTML=battleship.computerPoints();
                             }
                         } else {
                             computerChance()
@@ -114,14 +117,34 @@
                             document.getElementById(String(i) + String(j)).style.visibility = "hidden"
                             document.getElementById("player" + String(i) + String(j)).style.background =
                                 gridArrayBattleShip1[i][j]
+                            
                             gridArrayBattleShip1[i][j] = "selected"
-                            console.log("PLAYER GOT " + battleship1.playerPoints() + " POINTS")
+                            //console.log("PLAYER GOT " + battleship1.playerPoints() + " POINTS")
+                            document.getElementById("player_score").innerHTML=battleship1.playerPoints();
+                          
 
                         }
                         computerChance()
                     }
                 </script>
             </table>
+            
+        </div>
+    </div>
+
+        <hr>
+    <div class="game">
+        <div class="computer">
+            <div class="container">
+                <div class="computerScore">
+                    <div id="computerhead">Computer</div>
+                    <div id="computer_score">0</div>
+                </div>
+                <div class="playerScore">
+                    <div id="playerhead">Player</div>
+                    <div id="player_score">0</div>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -6,25 +6,31 @@ var FOUR_SHIP_VALUE
 var FIVE_SHIP_VALUE 
 var COMPUTER_POINTS = 0
 class BattleshipPlayer {
+    
     constructor(SINGLE_SHIP_VALUE, DOUBLE_SHIP_VALUE, TRIPLE_SHIP_VALUE, FOUR_SHIP_VALUE, FIVE_SHIP_VALUE)
     {
+        
         this.SINGLE_SHIP_VALUE = SINGLE_SHIP_VALUE;
         console.log(this.SINGLE_SHIP_VALUE);
         this.DOUBLE_SHIP_VALUE = DOUBLE_SHIP_VALUE;
         this.TRIPLE_SHIP_VALUE = TRIPLE_SHIP_VALUE;
         this.FOUR_SHIP_VALUE = FOUR_SHIP_VALUE;
         this.FIVE_SHIP_VALUE = FIVE_SHIP_VALUE;
+        
     }
+   
     // var SINGLE_SHIP_VALUE
     // var DOUBLE_SHIP_VALUE = "blue"
     // var TRIPLE_SHIP_VALUE = "darkgreen"
     // var FOUR_SHIP_VALUE = "brown"
     // var FIVE_SHIP_VALUE = "purple"
+    
+    
     arrayInit()
     {
         console.log("int");
         for (i = 0; i < 10; i++) {
-            gridArrayBattleShip[i] = new Array(10)
+            gridArrayBattleShip[i]= new Array(10)
             console.log("int1");
         }
         for (i = 0; i < 10; i++) {
@@ -42,6 +48,7 @@ class BattleshipPlayer {
         if (gridArrayBattleShip[randomPositionX][randomPositionY] == null) {
             console.log(this.SINGLE_SHIP_VALUE);
             gridArrayBattleShip[randomPositionX][randomPositionY] = this.SINGLE_SHIP_VALUE;
+        
         }
         else {
             this.addSingleShip();
