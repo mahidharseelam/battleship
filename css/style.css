@@ -21,7 +21,16 @@ body{
  
 }
 
+.reset{
+	margin-top: 12%;
+}
 
+#reset{
+	background: url(../img/restart.png);
+	width: 100px;
+	height: 100px;
+	background-size: cover;
+}
 
 h1{
 	margin-left: 46%;

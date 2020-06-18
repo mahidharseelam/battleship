@@ -23,8 +23,8 @@
                 <script type="text/javascript">
                     //import {addVerticalFourShip} from './BattleShip.js';
                     const battleship = new BattleshipPlayer("red", "blue", "darkgreen", "wheat", "purple");
-                    battleship.arrayInit();
-                    battleship.addSingleShip();
+                    battleship.arrayInit()
+                    battleship.addSingleShip()
                     battleship.addHorizontalDoubleShip()
                     battleship.addSingleShip()
                     battleship.addVerticalDoubleShip()
@@ -50,6 +50,7 @@
                 </script>
             </table>
         </div>
+        <div class="reset"><button id="reset" onclick='reset()'></button></div>
         <div class="player">
             <h2><b>PLAYER</b></h2>
             <table>
@@ -126,6 +127,10 @@
 
                         }
                         computerChance()
+                    }
+
+                    function reset(){
+                        location.reload()
                     }
                 </script>
             </table>
