@@ -21,6 +21,8 @@ body{
  
 }
 
+
+
 h1{
 	margin-left: 46%;
 	margin-top: 2%;
@@ -29,7 +31,8 @@ h1{
 }
 
 h2 {
-    margin-left: 30%;
+	margin-left: 30%;
+	color: chartreuse;
 }
 
 table {
