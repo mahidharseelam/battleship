@@ -1,4 +1,3 @@
-//import { computerChance } from 'Battleship.js';
 
 var gridArrayBattleShip1 = new Array(10)
 var SINGLE_SHIP_VALUE
@@ -18,26 +17,18 @@ class BattleshipComputer {
         this.FOUR_SHIP_VALUE = FOUR_SHIP_VALUE;
         this.FIVE_SHIP_VALUE = FIVE_SHIP_VALUE;
     }
-    // var SINGLE_SHIP_VALUE
-    // var DOUBLE_SHIP_VALUE = "blue"
-    // var TRIPLE_SHIP_VALUE = "darkgreen"
-    // var FOUR_SHIP_VALUE = "brown"
-    // var FIVE_SHIP_VALUE = "purple"
+   
     arrayInit() {
-        console.log("int");
         for (i = 0; i < 10; i++) {
             gridArrayBattleShip1[i] = new Array(10)
-            console.log("int1");
         }
         for (i = 0; i < 10; i++) {
             for (j = 0; j < 10; j++) {
                 gridArrayBattleShip1[i][j] = null;
-                console.log("int2");
             }
         }
     }
     addSingleShip() {
-        console.log("pratik");
         var randomPositionX = Math.floor(Math.random() * 10);
         var randomPositionY = Math.floor(Math.random() * 10);
         if ([randomPositionX][randomPositionY] == null) {
@@ -50,7 +41,6 @@ class BattleshipComputer {
     }
 
     addHorizontalDoubleShip() {
-        console.log("hrship");
         var randomPositionX = Math.floor(Math.random() * 10);
         var randomPositionY = Math.floor(Math.random() * 9);
         var check = 0
@@ -70,7 +60,6 @@ class BattleshipComputer {
         }
     }
     addVerticalDoubleShip() {
-        console.log("vrship")
         var randomPositionX = Math.floor(Math.random() * 9);
         var randomPositionY = Math.floor(Math.random() * 10);
         var check = 0
@@ -178,6 +167,7 @@ class BattleshipComputer {
             this.addHorizontalFiveShip()
         }
     }
+
     addVerticalFiveShip() {
         var randomPositionX = Math.floor(Math.random() * 6);
         var randomPositionY = Math.floor(Math.random() * 10);
@@ -210,9 +200,4 @@ class BattleshipComputer {
     }
 
     
-
-
 }
-// const battleship = new Battleship("red", "blue", "darkgreen", "brown", "purple");
-//                     battleship.addSingleShip();
-                    //export {addVerticalFourShip};

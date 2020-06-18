@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="css/scoreBoard.css">
     <script type="text/javascript" src="BattleShip.js"></script>
     <script type="text/javascript" src="BattleShipComputer.js"></script>
-    <style>
-        
-    </style>
+    <script>
+        alert("BATTLESHIP GAME \n  30 points to win ")
+    </script>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
             <table>
                 <script type="text/javascript">
                     //import {addVerticalFourShip} from './BattleShip.js';
-                    const battleship = new BattleshipPlayer("red", "blue", "darkgreen", "wheat", "purple");
+                    const battleship = new BattleshipPlayer("yellow", "blue", "darkgreen", "wheat", "purple")
                     battleship.arrayInit()
                     battleship.addSingleShip()
                     battleship.addHorizontalDoubleShip()
@@ -46,6 +46,7 @@
                             }
                         }
                         document.write("</tr>")
+
                     }
                 </script>
             </table>
@@ -55,7 +56,7 @@
             <h2><b>PLAYER</b></h2>
             <table>
                 <script>
-                    const battleship1 = new BattleshipComputer("red", "blue", "darkgreen", "wheat", "purple");
+                    const battleship1 = new BattleshipComputer("blue", "darkgreen", "red", "purple", "wheat");
                     battleship1.arrayInit()
                     battleship1.addSingleShip()
                     battleship1.addHorizontalDoubleShip()
@@ -88,20 +89,19 @@
                         var i = randomSelectX
                         var j = randomSelectY
                         if (gridArrayBattleShip[i][j] != "selected") {
-                            if (gridArrayBattleShip[i][j] == null) {
+                            if (gridArrayBattleShip[i][j] == null) { // null, selected ,color
                                 gridArrayBattleShip[i][j] = "selected"
-                                document.getElementById("computer" + String(i) + String(j)).innerHTML = "X"
-                                console.log("computer", i, j)
+                                document.getElementById("computer" + String(i) + String(j)).innerHTML =
+                                    "<b style='color:red'>X</b>"
                             } else {
                                 gridArrayBattleShip[i][j] = "selected"
-                                document.getElementById("computer" + String(i) + String(j)).innerHTML = "X"
-                                console.log("computer", i, j);
+                                document.getElementById("computer" + String(i) + String(j)).innerHTML =
+                                    "<b style='color:red'>X</b>"
                                 //console.log("COMPUTER GOT " + battleship.computerPoints() + " POINTS");
-                                document.getElementById("computer_score").innerHTML=battleship.computerPoints();
+                                document.getElementById("computer_score").innerHTML = battleship.computerPoints();
                             }
                         } else {
                             computerChance()
-                            console.log("attemptagain")
                         }
                     }
 
@@ -109,39 +109,34 @@
 
                     function playerChance(i, j) {
                         if (gridArrayBattleShip1[i][j] == null) {
-                            console.log("no ship")
                             document.getElementById(String(i) + String(j)).style.visibility = "hidden"
 
 
                         } else {
-                            console.log("there is a ship")
-                            //points = points +1
                             document.getElementById(String(i) + String(j)).style.visibility = "hidden"
                             document.getElementById("player" + String(i) + String(j)).style.background =
                                 gridArrayBattleShip1[i][j]
-                            
-                            gridArrayBattleShip1[i][j] = "selected"
-                            //console.log("PLAYER GOT " + battleship1.playerPoints() + " POINTS")
-                            document.getElementById("player_score").innerHTML=battleship1.playerPoints();
-                          
 
+                            gridArrayBattleShip1[i][j] = "selected"
+                            document.getElementById("player_score").innerHTML = battleship1.playerPoints();
                         }
                         computerChance()
                     }
 
-                    function reset(){
+                    function reset() {
                         location.reload()
                     }
                 </script>
             </table>
-            
+
         </div>
     </div>
 
-        <hr>
+    <hr>
     <div class="game">
         <div class="computer">
             <div class="container">
+                <h4 style="color: white"> *30 POINTS TO WIN</h4>
                 <div class="computerScore">
                     <div id="computerhead">Computer</div>
                     <div id="computer_score">0</div>
@@ -153,7 +148,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

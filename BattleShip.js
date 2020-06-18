@@ -11,7 +11,6 @@ class BattleshipPlayer {
     {
         
         this.SINGLE_SHIP_VALUE = SINGLE_SHIP_VALUE;
-        console.log(this.SINGLE_SHIP_VALUE);
         this.DOUBLE_SHIP_VALUE = DOUBLE_SHIP_VALUE;
         this.TRIPLE_SHIP_VALUE = TRIPLE_SHIP_VALUE;
         this.FOUR_SHIP_VALUE = FOUR_SHIP_VALUE;
@@ -19,30 +18,19 @@ class BattleshipPlayer {
         
     }
    
-    // var SINGLE_SHIP_VALUE
-    // var DOUBLE_SHIP_VALUE = "blue"
-    // var TRIPLE_SHIP_VALUE = "darkgreen"
-    // var FOUR_SHIP_VALUE = "brown"
-    // var FIVE_SHIP_VALUE = "purple"
-    
-    
     arrayInit()
     {
-        console.log("int");
         for (i = 0; i < 10; i++) {
             gridArrayBattleShip[i]= new Array(10)
-            console.log("int1");
         }
         for (i = 0; i < 10; i++) {
             for (j = 0; j < 10; j++) {
                 gridArrayBattleShip[i][j] = null;
-                console.log("int2");
             }
         }
     }
      addSingleShip() 
      {
-         console.log("pratik");
         var randomPositionX = Math.floor(Math.random() * 10);
         var randomPositionY = Math.floor(Math.random() * 10);
         if (gridArrayBattleShip[randomPositionX][randomPositionY] == null) {
@@ -55,7 +43,6 @@ class BattleshipPlayer {
          }
     }
     addHorizontalDoubleShip() {
-        console.log("hrship");
         var randomPositionX = Math.floor(Math.random() * 10);
         var randomPositionY = Math.floor(Math.random() * 9);
         var check = 0
@@ -75,7 +62,6 @@ class BattleshipPlayer {
          }
     }
      addVerticalDoubleShip() {
-         console.log("vrship")
     var randomPositionX = Math.floor(Math.random() * 9);
     var randomPositionY = Math.floor(Math.random() * 10);
     var check = 0
@@ -214,6 +200,3 @@ class BattleshipPlayer {
 
     
 }
-// const battleship = new Battleship("red", "blue", "darkgreen", "brown", "purple");
-//                     battleship.addSingleShip();
-                    //export {addVerticalFourShip};
